@@ -7,17 +7,16 @@ using namespace frc;
 class Robot: public IterativeRobot {
 public:
      Robot() {} 
-	TalonSRX *drive_talon_left;
+	TalonSRX *intake_talon_1;
 	Joystick *joystick; 
-    Intake  *intake;
+    Intake  *intake_talon;
     PressAndHold *pressandhold;
 
     void RobotInit() { 
-        drive_talon_left = new TalonSRX(2);
-    
+        intake_talon_1 = new TalonSRX(6);
         joystick = new  Joystick(0);
-        pressandhold = new PressAndHold(joystick,drive_talon_left);
-        intake = new Intake(pressandhold,drive_talon_left);
+        pressandhold = new PressAndHold(joystick,intake_talon_1);
+        intake_talon = new Intake(pressandhold,intake_talon_1,joystick);
     }
     	
 
@@ -30,7 +29,8 @@ public:
     void AutonomousPeriodic() { }
     void TeleopPeriodic() { 
     //drive_talon_left->Set(ControlMode::PercentOutput,1);	   
-    intake->run_intake(0.3);
+    intake_talon->intake_options(1);
+    // run intake to 0 as the paramter now has no relevance over the class 
 
     }
     void TestPeriodic() { }
