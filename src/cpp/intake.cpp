@@ -8,10 +8,11 @@ void Intake::run_intake (float f_max_speed){
 std::cout<<"this is the amp reading: "<<amp<<std::endl;
 std::cout<<"this is the voltage reading"<<intake_talon->GetMotorOutputVoltage()<<std::endl;
 }
-void Intake::intake_options(float f_max_speed){//be sure that the input is a integar)
+void Intake::intake_options(float f_max_speed){
+ //be sure that the input is a float the purpose of this is to control the intake speed while intake is driven 
 Joystick *joystick;
 std::cout<<"this is the amp reading"<<intake_talon->GetOutputCurrent()<<std::endl;
-std::cout<<"this is the amp reading" << intake_talon->GetMotorOutputVoltage()<<std::endl;
+std::cout<<"this is the voltage reading" << intake_talon->GetMotorOutputVoltage()<<std::endl;
 joystick= new Joystick(3);
 float hope_this_works= joystick->GetRawAxis(3);
 double x_pos =	hope_this_works;
