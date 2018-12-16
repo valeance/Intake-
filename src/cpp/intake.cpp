@@ -8,7 +8,7 @@ void Intake::run_intake (float f_max_speed){
 std::cout<<"this is the amp reading: "<<amp<<std::endl;
 std::cout<<"this is the voltage reading"<<intake_talon->GetMotorOutputVoltage()<<std::endl;
 }
-void Intake::intake_options(float f_max_speed){)
+void Intake::intake_options(float f_max_speed){
 
 std::cout<<"this is the amp reading"<<intake_talon->GetOutputCurrent()<<std::endl;
 std::cout<<"this is the amp reading" << intake_talon->GetMotorOutputVoltage()<<std::endl;
