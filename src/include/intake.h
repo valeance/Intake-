@@ -15,6 +15,7 @@ class Intake
  //this is the function that takes the parameter f_max_speed and does
  void  run_intake(float f_max_speed);
  void intake_options(float f_max_speed);
+ void intake_reverse(float f_max_speed);
  private:
   PressAndHold *intake_hold;
   TalonSRX *intake_talon;
