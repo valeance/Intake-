@@ -12,7 +12,7 @@ void Intake::intake_options(float f_max_speed){//be sure that the input is a int
 
 std::cout<<"this is the amp reading"<<intake_talon->GetOutputCurrent()<<std::endl;
 std::cout<<"this is the amp reading" << intake_talon->GetMotorOutputVoltage()<<std::endl;
-float hope_this_works= joystick->GetRawAxis(3);
+float hope_this_works= joystick->GetRawAxis(4);
 double x_pos =	hope_this_works;
 float adjusted_speed = x_pos*f_max_speed;
 intake_talon->Set(ControlMode::PercentOutput,adjusted_speed);
